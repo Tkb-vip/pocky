@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Id:</strong>
+  <%= @club.id %>
+</p>
+
+<p>
+  <strong>Activities:</strong>
+  <%= @club.activities %>
+</p>
+
+<p>
+  <strong>Tcheck:</strong>
+  <%= @club.tcheck %>
+</p>
+
+<p>
+  <strong>Scheck:</strong>
+  <%= @club.scheck %>
+</p>
+
+<p>
+  <strong>Tcheck updated at:</strong>
+  <%= @club.tcheck_updated_at %>
+</p>
+
+<p>
+  <strong>Scheck updated at:</strong>
+  <%= @club.scheck_updated_at %>
+</p>
+
+<p>
+  <strong>Place:</strong>
+  <%= @club.place_id %>
+</p>
+
+<p>
+  <strong>Club name:</strong>
+  <%= @club.club_name_id %>
+</p>
+
+<%= link_to 'Edit', edit_club_path(@club) %> |
+<%= link_to 'Back', clubs_path %>

@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @place.name %>
+</p>
+
+<p>
+  <strong>Place image:</strong>
+  <%= @place.place_image %>
+</p>
+
+<p>
+  <strong>Memo:</strong>
+  <%= @place.memo %>
+</p>
+
+<p>
+  <strong>Sort:</strong>
+  <%= @place.sort %>
+</p>
+
+<%= link_to 'Edit', edit_place_path(@place) %> |
+<%= link_to 'Back', places_path %>

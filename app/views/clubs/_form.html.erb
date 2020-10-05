@@ -1,0 +1,57 @@
+<%= form_with(model: club, local: true) do |form| %>
+  <% if club.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(club.errors.count, "error") %> prohibited this club from being saved:</h2>
+
+      <ul>
+      <% club.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :id %>
+    <%= form.number_field :id, id: :club_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :activities %>
+    <%= form.text_area :activities, id: :club_activities %>
+  </div>
+
+  <div class="field">
+    <%= form.label :tcheck %>
+    <%= form.check_box :tcheck, id: :club_tcheck %>
+  </div>
+
+  <div class="field">
+    <%= form.label :scheck %>
+    <%= form.check_box :scheck, id: :club_scheck %>
+  </div>
+
+  <div class="field">
+    <%= form.label :tcheck_updated_at %>
+    <%= form.datetime_select :tcheck_updated_at, id: :club_tcheck_updated_at %>
+  </div>
+
+  <div class="field">
+    <%= form.label :scheck_updated_at %>
+    <%= form.datetime_select :scheck_updated_at, id: :club_scheck_updated_at %>
+  </div>
+
+  <div class="field">
+    <%= form.label :place_id %>
+    <%= form.number_field :place_id, id: :club_place_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :club_name_id %>
+    <%= form.number_field :club_name_id, id: :club_club_name_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @club_name.name %>
+</p>
+
+<p>
+  <strong>Sort:</strong>
+  <%= @club_name.sort %>
+</p>
+
+<%= link_to 'Edit', edit_club_name_path(@club_name) %> |
+<%= link_to 'Back', club_names_path %>
