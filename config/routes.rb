@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  # get 'home/top'
+  get '/',  to: 'home#top'
+
   resources :comments
   resources :places
   resources :club_names
