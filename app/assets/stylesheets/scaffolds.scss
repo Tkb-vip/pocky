@@ -1,3 +1,6 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
 body {
   background-color: #fff;
   color: #333;
@@ -20,6 +23,7 @@ pre {
 }
 
 a {
+  text-decoration:underline;
   color: #000;
 
   &:visited {

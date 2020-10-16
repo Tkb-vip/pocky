@@ -26,6 +26,15 @@ class PlacesController < ApplicationController
   def create
     @place = Place.new(place_params)
 
+  if params[:place][:place_image].present?
+    @place.place_image = DateTime.now.strftime('%Y%m%d%H%M%S') + params[:place][:place_image].original_filename
+    #\assets\images\places\
+    File.open( "app/assets/images/places/#{@place.place_image}", 'w+b') { |f|
+     f.write(params[:place][:place_image].read)
+   }
+  end
+
+
     respond_to do |format|
       if @place.save
         format.html { redirect_to @place, notice: 'Place was successfully created.' }
@@ -40,6 +49,15 @@ class PlacesController < ApplicationController
   # PATCH/PUT /places/1
   # PATCH/PUT /places/1.json
   def update
+
+    if params[:place][:place_image].present?
+      @place.place_image = DateTime.now.strftime('%Y%m%d%H%M%S') + params[:place][:place_image].original_filename
+      #\assets\images\places\
+      File.open( "app/assets/images/places/#{@place.place_image}", 'w+b') { |f|
+       f.write(params[:place][:place_image].read)
+     }
+    end
+
     respond_to do |format|
       if @place.update(place_params)
         format.html { redirect_to @place, notice: 'Place was successfully updated.' }

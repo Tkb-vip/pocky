@@ -7,9 +7,13 @@
 
 <p>
   <strong>Place image:</strong>
+  <% if @place.place_image.present? %>
   <%= @place.place_image %>
+  <br>
+  <%= image_tag "places/#{@place.place_image}",size: '320x240' %>
+  <% end %>
 </p>
-
+    
 <p>
   <strong>Memo:</strong>
   <%= @place.memo %>
