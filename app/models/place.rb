@@ -1,3 +1,5 @@
-class Place < ApplicationRecord
-    has_many :clubs
+class Place < ActiveRecord::Base
+ validates :name, presence: true
+ has_many :club
 end
+
