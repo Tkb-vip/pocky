@@ -1,4 +1,6 @@
 class Club < ApplicationRecord
-
-    has_many :comments
+    validates :activities, presence: true
+    belongs_to :club
+    belongs_to :place
+    belongs_to :comment
 end
