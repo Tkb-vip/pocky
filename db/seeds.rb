@@ -72,3 +72,4 @@ Place.create(name: "第４演習室", sort: 0)
 Place.create(name: "第５演習室", sort: 0)
 Place.create(name: "総合実践室", sort: 0)
 Place.create(name: "茶道室", sort: 0)
+
