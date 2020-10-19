@@ -1,18 +1,18 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Clubs</h1>
+<h1>部活動</h1>
 
 <table>
   <thead>
     <tr>
-      <th>Id</th>
-      <th>Activities</th>
-      <th>Tcheck</th>
-      <th>Scheck</th>
-      <th>Tcheck updated at</th>
-      <th>Scheck updated at</th>
-      <th>Place</th>
-      <th>Club name</th>
+      <th>部活ID</th>
+      <th>活動内容</th>
+      <th>先生チェック</th>
+      <th>生徒チェック</th>
+      <th>先生チェック日時</th>
+      <th>生徒チェック日時</th>
+      <th>場所</th>
+      <th>部活動名</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -28,9 +28,9 @@
         <td><%= club.scheck_updated_at %></td>
         <td><%= club.place_id %></td>
         <td><%= club.club_name_id %></td>
-        <td><%= link_to 'Show', club %></td>
-        <td><%= link_to 'Edit', edit_club_path(club) %></td>
-        <td><%= link_to 'Destroy', club, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to '見る', club %></td>
+        <td><%= link_to '編集', edit_club_path(club) %></td>
+        <td><%= link_to '削除', club, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -38,4 +38,4 @@
 
 <br>
 
-<%= link_to 'New Club', new_club_path %>
+<%= link_to '活動内容を入力する', new_club_path %>
