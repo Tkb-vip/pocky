@@ -49,7 +49,7 @@ class PlacesController < ApplicationController
   # PATCH/PUT /places/1
   # PATCH/PUT /places/1.json
   def update
-
+      @place.attributes = place_params
     if params[:place][:place_image].present?
       @place.place_image = DateTime.now.strftime('%Y%m%d%H%M%S') + params[:place][:place_image].original_filename
       #\assets\images\places\
@@ -59,7 +59,7 @@ class PlacesController < ApplicationController
     end
 
     respond_to do |format|
-      if @place.update(place_params)
+      if @place.save
         format.html { redirect_to @place, notice: 'Place was successfully updated.' }
         format.json { render :show, status: :ok, location: @place }
       else
