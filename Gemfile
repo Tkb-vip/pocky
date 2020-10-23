@@ -56,3 +56,7 @@ gem 'jquery-ui-rails'
 gem 'jquery-turbolinks'
 
 gem 'rails-i18n'
+
+gem 'config'
+gem 'httpclient'
+
