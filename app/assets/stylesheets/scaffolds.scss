@@ -2,12 +2,17 @@
 @import "bootstrap";
 
 body {
-  background-color: rgba(57, 92, 60, 0.432);
+  background-color: rgb(249, 253, 249);
   color: rgb(5, 5, 5);
   margin: 33px;
   font-family: HGPゴシックE	,verdana, arial, helvetica, sans-serif;
   font-size: 13px;
   line-height: 18px;
+  text-align: center
+}
+
+.right {
+  text-align: right;
 }
 
 p, ol, ul, td {
@@ -124,4 +129,14 @@ ul{
   ul li a:hover{
   color: rgb(253, 249, 249);
   }
-  
+
+  .sample img {
+       width: 50px;
+       height: auto
+  }
+
+  .SideBySide h1{
+    display:inline-block;
+    vertical-align:top;
+   }
+

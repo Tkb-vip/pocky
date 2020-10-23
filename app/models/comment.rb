@@ -1,3 +1,3 @@
 class Comment < ApplicationRecord
-    has_many :clubs
+    belongs_to :club
 end
