@@ -1,11 +1,10 @@
-@import "bootstrap-sprockets";
-@import "bootstrap";
-
 body {
   background-color: rgb(249, 253, 249);
   color: rgb(5, 5, 5);
+  background-color: #fff;
+  color: #333;
   margin: 33px;
-  font-family: HGPゴシックE	,verdana, arial, helvetica, sans-serif;
+  font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
   line-height: 18px;
   text-align: center
@@ -28,7 +27,6 @@ pre {
 }
 
 a {
-  text-decoration:underline;
   color: #000;
 
   &:visited {
@@ -88,31 +86,7 @@ div {
   }
 }
 
-
-
-.header {
-  position: fixed;
-  width: 100%;
-  top: 0;
-  z-index: 10000;
-}
-
-.container {
-  padding-top: 150px;
-}
-
-ul{
-  display: table;
-  margin: 0 auto;
-  padding: 0;
-  width: 80%;
-  text-align: center;
-  }
-  ul li{
-  display: table-cell;
-  min-width: 50px;
-  }
-  ul li a{
+label {
   display: block;
   width: 100%;
   padding: 10px 0;
@@ -140,3 +114,4 @@ ul{
     vertical-align:top;
    }
 
+}

@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Temp max:</strong>
+  <%= @weather.temp_max %>
+</p>
+
+<p>
+  <strong>Temp min:</strong>
+  <%= @weather.temp_min %>
+</p>
+
+<p>
+  <strong>Temp feel:</strong>
+  <%= @weather.temp_feel %>
+</p>
+
+<p>
+  <strong>Weather:</strong>
+  <%= @weather.weather_id %>
+</p>
+
+<p>
+  <strong>Rainfall:</strong>
+  <%= @weather.rainfall %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @weather.date %>
+</p>
+
+<p>
+  <strong>Aquired at:</strong>
+  <%= @weather.aquired_at %>
+</p>
+
+<%= link_to 'Edit', edit_weather_path(@weather) %> |
+<%= link_to 'Back', weathers_path %>
