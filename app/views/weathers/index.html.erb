@@ -1,17 +1,19 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Weathers</h1>
+<h1>天気</h1>
+
+
 
 <table>
   <thead>
     <tr>
-      <th>Temp max</th>
-      <th>Temp min</th>
-      <th>Temp feel</th>
-      <th>Weather</th>
-      <th>Rainfall</th>
-      <th>Date</th>
-      <th>Aquired at</th>
+      <th>最高気温</th>
+      <th>最低気温</th>
+      <th>体感気温</th>
+      <th>天候</th>
+      <th>降水量</th>
+      <th>日時</th>
+      <th>取得時間</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -21,14 +23,11 @@
       <tr>
         <td><%= weather.temp_max %></td>
         <td><%= weather.temp_min %></td>
-        <td><%= weather.temp_feel %></td>
-        <td><%= weather.weather_id %></td>
+        <td><%= weather.temp_feel %></td>       
+        <td><%= weather_string(weather.weather_id) %></td>
         <td><%= weather.rainfall %></td>
         <td><%= weather.date %></td>
         <td><%= weather.aquired_at %></td>
-        <td><%= link_to 'Show', weather %></td>
-        <td><%= link_to 'Edit', edit_weather_path(weather) %></td>
-        <td><%= link_to 'Destroy', weather, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -36,4 +35,5 @@
 
 <br>
 
-<%= link_to 'New Weather', new_weather_path %>
+<p>新しい天気情報を取得するにはコマンドを入れてください</p>
+
