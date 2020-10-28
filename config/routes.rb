@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   resources :users
+  resources :weathers
+
   # get 'home/top'
   get '/',  to: 'home#top'
 

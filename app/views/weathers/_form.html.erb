@@ -1,0 +1,52 @@
+<%= form_with(model: weather, local: true) do |form| %>
+  <% if weather.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(weather.errors.count, "error") %> prohibited this weather from being saved:</h2>
+
+      <ul>
+      <% weather.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :temp_max %>
+    <%= form.text_field :temp_max, id: :weather_temp_max %>
+  </div>
+
+  <div class="field">
+    <%= form.label :temp_min %>
+    <%= form.text_field :temp_min, id: :weather_temp_min %>
+  </div>
+
+  <div class="field">
+    <%= form.label :temp_feel %>
+    <%= form.text_field :temp_feel, id: :weather_temp_feel %>
+  </div>
+
+  <div class="field">
+    <%= form.label :weather_id %>
+    <%= form.number_field :weather_id, id: :weather_weather_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :rainfall %>
+    <%= form.text_field :rainfall, id: :weather_rainfall %>
+  </div>
+
+  <div class="field">
+    <%= form.label :date %>
+    <%= form.datetime_select :date, id: :weather_date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :aquired_at %>
+    <%= form.datetime_select :aquired_at, id: :weather_aquired_at %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
