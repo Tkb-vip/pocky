@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>ユーザー名:</strong>
+  <%= @user.username %>
+</p>
+
+<p>
+  <strong>パスワード:</strong>
+  <%= @user.password %>
+</p>
+
+<p>
+  <strong>部活名番号:</strong>
+  <%= @user.club_name_id %>
+</p>
+
+<p>
+  <strong>先生:</strong>
+  <%= @user.teacher %>
+</p>
+
+<p>
+  <strong>管理人:</strong>
+  <%= @user.admin %>
+</p>
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>
