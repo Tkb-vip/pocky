@@ -96,4 +96,4 @@ User.delete_all
 User.connection.execute("delete from sqlite_sequence where name='users'")
 User.create(username: "baseball",password:"baseball",club_name_id:1, teacher:false,admin:false )
 User.create(username: "baseballteacher",password:"baseballteacher",club_name_id:1, teacher:true,admin:false )
-User.create(username: "admin",password:"admin",club_name_id:0, teacher:false,admin:true )
+User.create(username: "admin",password:"admin",club_name_id:0, teacher:true,admin:true )

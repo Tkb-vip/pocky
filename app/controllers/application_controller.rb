@@ -10,11 +10,23 @@ class ApplicationController < ActionController::Base
       #user == 'high' && pass ==  'school'
     user = User.find_by(username: user,password:pass)
      if user.nil?
+      session[:username]=""
+      session[:teacher]=false
+      session[:admin]=false
+
       false
      else
+      session[:username]=user.username
+      session[:teacher]=user.teacher
+ 
+      if user.teacher == true
+         session[:admin] = user.admin
+      else
+         session[:admin] = false
+      end
+
       true
-     @user=user.username
-     @teacher=teacher.teache
+    
 
 
      end  

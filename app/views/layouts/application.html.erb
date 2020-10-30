@@ -9,6 +9,18 @@
   </head>
 
   <body>
-    <%= yield %>
+  <%= session[:username] %>:
+  
+  <% if session[:admin] %>
+    "管理者"
+  <% else %>
+    <% if session[:teacher] == true %>
+      "先生"
+    <% else %>
+      "生徒"
+    <% end %>
+  <% end %>
+
+  <%= yield %>
   </body>
 </html>
