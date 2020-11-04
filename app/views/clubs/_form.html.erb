@@ -11,43 +11,39 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :id %>
-    <%= form.number_field :id, id: :club_id %>
-  </div>
 
   <div class="field">
-    <%= form.label :activities %>
+    <%= form.label :内容 %>
     <%= form.text_area :activities, id: :club_activities %>
   </div>
 
   <div class="field">
-    <%= form.label :tcheck %>
+    <%= form.label :先生チェック %>
     <%= form.check_box :tcheck, id: :club_tcheck %>
   </div>
 
   <div class="field">
-    <%= form.label :scheck %>
+    <%= form.label :生徒チェック %>
     <%= form.check_box :scheck, id: :club_scheck %>
   </div>
 
   <div class="field">
-    <%= form.label :tcheck_updated_at %>
+    <%= form.label :先生チェック日時 %>
     <%= form.datetime_select :tcheck_updated_at, id: :club_tcheck_updated_at %>
   </div>
 
   <div class="field">
-    <%= form.label :scheck_updated_at %>
+    <%= form.label :生徒チェック日時 %>
     <%= form.datetime_select :scheck_updated_at, id: :club_scheck_updated_at %>
   </div>
 
   <div class="field">
-    <%= form.label :place_id %>
+    <%= form.label :場所 %>
     <%= form.number_field :place_id, id: :club_place_id %>
   </div>
 
   <div class="field">
-    <%= form.label :club_name_id %>
+    <%= form.label :部活名 %>
     <%= form.number_field :club_name_id, id: :club_club_name_id %>
   </div>
 
