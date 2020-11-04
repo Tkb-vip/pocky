@@ -20,7 +20,7 @@ class CommentsController < ApplicationController
   # GET /comments/1/edit
   def edit
   end
-
+  #@comment, notice: 'Comment was successfully created.'
   # POST /comments
   # POST /comments.json
   def create
@@ -28,7 +28,7 @@ class CommentsController < ApplicationController
 
     respond_to do |format|
       if @comment.save
-        format.html { redirect_to @comment, notice: 'Comment was successfully created.' }
+        format.html { redirect_to @comment, notice: 'Comment was successfully created.'}
         format.json { render :show, status: :created, location: @comment }
       else
         format.html { render :new }
@@ -67,7 +67,7 @@ class CommentsController < ApplicationController
       @comment = Comment.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
+    # Only allow a list of trusted parameters through.
     def comment_params
       params.require(:comment).permit(:comment, :club_id)
     end

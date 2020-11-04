@@ -24,13 +24,31 @@
         <td><%= club.activities %></td>
         <td><%= club.tcheck %></td>
         <td><%= club.scheck %></td>
-        <td><%= club.tcheck_updated_at %></td>
-        <td><%= club.scheck_updated_at %></td>
+        <td><%= club.tcheck_updated_at.strftime("%Y-%m-%d %H:%M:%S") %></td>
+        <td><%= club.scheck_updated_at.strftime("%Y-%m-%d %H:%M:%S") %></td>
         <td><%= club.place_id %></td>
         <td><%= club.club_name_id %></td>
-        <td><%= link_to '見る', club %></td>
+        <td><%= link_to '詳細', club %></td>
         <td><%= link_to '編集', edit_club_path(club) %></td>
         <td><%= link_to '削除', club, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><p><b>コメント</b></p>
+        <%= form_tag('/comments') do %>
+          <%= hidden_field :comment, :club_id, :value => club.id %>
+          <p>
+          <%= text_field :comment, :comment %>
+          <%= submit_tag "コメントを追加する" %>
+          </p>
+        <% end %>
+        
+        <% club.comments.each do |c| %>
+          <p>
+          <%= c.created_at.strftime("%Y-%m-%d %H:%M:%S") %>
+          </p>
+          <p>
+          <%= c.comment %>
+          </p>
+        <% end %>
+        </td>
       </tr>
     <% end %>
   </tbody>
