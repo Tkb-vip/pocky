@@ -1,11 +1,13 @@
-@import "bootstrap-sprockets";
-@import "bootstrap";
-
 body {
+
+  background-color: #fff;
+  color: #333;
+
   background-color: rgb(249, 253, 249);
   color: rgb(5, 5, 5);
   background-color: #fff;
   color: rgb#000;
+
   margin: 33px;
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
@@ -30,7 +32,9 @@ pre {
 }
 
 a {
+
   text-decoration: none;
+
   color: #000;
   font-size: 15px;
 
@@ -90,6 +94,11 @@ div {
     font-size: 12px;
     list-style: square;
   }
+}
+
+
+label {
+  display: block;
 }
 
 
