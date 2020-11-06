@@ -20,14 +20,29 @@
 <main>
  <h3>部活動一覧</h3>
  <div style="text-align:center">
-  <div class="row" style="text-align:center">
-    <% ClubName.all.order(:sort).each do |club_name| %>
-      <div class="col-md-3 col-xs-offset-1 mybox"><%= club_name.name %></div>
-    <% end %>
-  </div>
+   <div class="row" style="text-align:center">
+     <% ClubName.all.order(:sort).each do |club_name| %>
+       <div class="col-md-3 col-xs-offset-1 mybox"><%= club_name.name %></div>
+     <% end %>
+   </div>
  </div>
 
  <h3>天気</h3>
+ <div class="row">
+   <% @weather.each do |weather| %>
+     <div class="col-md-2">
+     <%= weather.date.strftime("%m/%d %H:%M") %>
+     <br>
+     <div class="thumbnail"><img src="<%= weather_img(weather.weather_id) %>"></div>
+     <br>
+     <%= weather_string(weather.weather_id) %>
+     <br>
+     <%= weather.temp_max %>
+     <br>
+     <%= weather.temp_min %>
+     </div>
+   <% end %>
+  </div>
 
  <h3>交通状況</h3>
 </main>

@@ -124,7 +124,7 @@ label {
    
    .mybox{
     background: none;
-    border: 1px solid #10185c;	/* 線の太さ・種類・色 */
+    border: 1px solid #2a3170;	/* 線の太さ・種類・色 */
     margin-right: 50px; /* 外側の余白 */
     margin-left: 50px;
     margin-top: 30px;
@@ -136,7 +136,7 @@ label {
   }
   .mybox:after{
     background: none;
-    border: 1px solid #10185c;	/* 線の太さ・種類・色 */
+    border: 1px solid #2a3170;	/* 線の太さ・種類・色 */
     content: '';
     position: absolute;
     top: 3px;
@@ -147,4 +147,23 @@ label {
     display: flex;
     justify-content: space-evenly;
   }
-  
+
+  .row.temp_max{
+    color:red;
+  }
+
+  .row.temp_min{
+    color:blue;
+  }
+
+  .thumbnail {
+    display: inline-block;
+    height: 150px;
+    width: 150px;
+    margin-right: 15px;
+    margin-bottom: 20px;
+}
+
+.thumbnail img {
+    height: 100%;
+}
