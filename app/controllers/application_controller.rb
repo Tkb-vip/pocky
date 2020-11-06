@@ -1,9 +1,17 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
-
+  before_action :init_session
   before_action :basic_authenticate
-
   private
+
+  def init_session
+    if session[:username].nil?
+    session[:username]=""
+    session[:teacher]=false
+    session[:admin]=false
+    session[:club_name_id]=0
+    end
+  end
 
   def basic_authenticate
     authenticate_or_request_with_http_basic do |user,pass|
@@ -13,6 +21,7 @@ class ApplicationController < ActionController::Base
       session[:username]=""
       session[:teacher]=false
       session[:admin]=false
+      session[:club_name_id]=0
 
       false
      else
@@ -24,6 +33,7 @@ class ApplicationController < ActionController::Base
       else
          session[:admin] = false
       end
+      session[:club_name_id]=user.club_name_id
 
       true
     
