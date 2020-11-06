@@ -3,10 +3,11 @@ class ClubsController < ApplicationController
 
   # GET /clubs
   # GET /clubs.json
+  #１０行目にdate～を追加する
   def index
-    @club_name_id = 1
+    @club_name_id = session[:club_name_id]
     #@clubs = Club.all
-    @clubs = Club.where(club_name_id: 1)
+    @clubs = Club.where(club_name_id: session[:club_name_id])
     #@comments = Comment.where(club_id: 1).order(created_at: :desc)
   end
 

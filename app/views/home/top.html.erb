@@ -12,7 +12,12 @@
       <li><a href="weathers">天気</a></li>
       <li><a href="#">交通状況</a></li>
       <li><a href="#">お問い合わせ</a></li>
-      <li><a href="#">ログイン</a></li>
+      <% if session[:username] == "" %>
+      <li><%= link_to 'ログイン', home_login_path %></li>
+      <% else %>
+      <li><%= link_to 'ログアウト', home_logout_path %></li>
+      <% end %>
+
     </ul>
   </nav>
 </header>
