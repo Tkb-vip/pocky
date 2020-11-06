@@ -10,5 +10,12 @@
   <%= @comment.club_id %>
 </p>
 
-<%= link_to 'Edit', edit_comment_path(@comment) %> |
-<%= link_to 'Back', comments_path %>
+<p><b>コメント</b></p>
+<% @club.comments.each do |c| %>
+  <p>
+  <%= c.comment %>
+  </p>
+<% end %>
+
+<%= link_to '編集', edit_comment_path(@comment) %> |
+<%= link_to '戻る', comments_path %>

@@ -4,7 +4,10 @@ class ClubsController < ApplicationController
   # GET /clubs
   # GET /clubs.json
   def index
-    @clubs = Club.all
+    @club_name_id = 1
+    #@clubs = Club.all
+    @clubs = Club.where(club_name_id: 1)
+    #@comments = Comment.where(club_id: 1).order(created_at: :desc)
   end
 
   # GET /clubs/1
