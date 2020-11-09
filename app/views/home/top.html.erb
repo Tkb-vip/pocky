@@ -1,7 +1,7 @@
 <header>
  <div class="SideBySide">
-  <h1 class ="sample"><img src="pocky.png" alt="Pocky"></h1>
-  <a href="#"><h1>Pocky<h1></a>
+  <h1 class ="sample"><%= image_tag "/pocky.png" %></h1>
+  <h1>Pocky<h1>
  </div>
  <div class="right">
    <%= @today %> (<%= @yobi %>)
@@ -45,7 +45,7 @@
      <%= weather.temp_max %>
      <br>
      <%= weather.temp_min %>
-     </div>
+    </div>
    <% end %>
   </div>
 
