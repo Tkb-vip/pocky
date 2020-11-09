@@ -1,3 +1,155 @@
 // Place all the styles related to the clubs controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.box-1 {
+    border: 4px solid #82636b;
+    border-radius: 240px 15px 185px 15px / 15px 200px 15px 185px;
+    margin: 2em 0;
+    padding: 2em;
+}
+.check1  {
+	width: 90%;
+	margin: 2em auto;
+}
+@keyframes click-wave {
+	0% {
+		position: relative;
+		width: 30px;
+		height: 30px;
+		opacity: 0.35;
+	}
+	100% {
+		width: 200px;
+		height: 200px;
+		margin-top: -80px;
+		margin-left: -80px;
+		opacity: 0;
+	}
+}
+.check1  .option-input {
+	position: relative;
+	position: relative;
+	top: 13.33333px;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	width: 30px;
+	height: 30px;
+	margin-right: 0.5rem;
+	cursor: pointer;
+	transition: all 0.15s ease-out 0s;
+	color: #ffffff;
+	border: none;
+	outline: none;
+	background: #d7cbcb;
+	-webkit-appearance: none;
+	        appearance: none;
+}
+.check2  .option-input:hover {
+	background:#C2EEFF;
+}
+.check1  .option-input:checked {
+	background: #da3c41;
+}
+.check1 .option-input:checked::before {
+	font-size: 20px;
+	line-height: 30px;
+	position: absolute;
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+	content: '✔';
+	text-align: center;
+}
+.check1 .option-input:checked::after {
+	position: relative;
+	display: block;
+	content: '';
+	-webkit-animation: click-wave 0.65s;
+	        animation: click-wave 0.65s;
+	background: #da3c41;
+}
+.check1 .option-input.radio {
+    border-radius: 50%;
+}
+.check1 .option-input.radio::after {
+	border-radius: 50%;
+}
+.check1  {
+	line-height: 40px;
+    display: block;
+}
+
+.check2  {
+	width: 90%;
+	margin: 2em auto;
+}
+@keyframes click-wave {
+	0% {
+		position: relative;
+		width: 30px;
+		height: 30px;
+		opacity: 0.35;
+	}
+	100% {
+		width: 200px;
+		height: 200px;
+		margin-top: -80px;
+		margin-left: -80px;
+		opacity: 0;
+	}
+}
+.check2  .option-input {
+	position: relative;
+	position: relative;
+	top: 13.33333px;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	width: 30px;
+	height: 30px;
+	margin-right: 0.5rem;
+	cursor: pointer;
+	transition: all 0.15s ease-out 0s;
+	color: #ffffff;
+	border: none;
+	outline: none;
+	background: #d7cbcb;
+	-webkit-appearance: none;
+	        appearance: none;
+}
+.check2  .option-input:checked {
+	background:#66FFFF;
+}
+ 
+.check2 .option-input:checked::before {
+	font-size: 20px;
+	line-height: 30px;
+	position: absolute;
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+	content: '✔';
+	text-align: center;
+}
+.check2 .option-input:checked::after {
+	position: relative;
+	display: block;
+	content: '';
+	-webkit-animation: click-wave 0.65s;
+	        animation: click-wave 0.65s;
+	background: #da3c41;
+}
+.check2 .option-input.radio {
+    border-radius: 50%;
+}
+.check2 .option-input.radio::after {
+	border-radius: 50%;
+}
+.check2  {
+	line-height: 40px;
+    display: block;
+}
+
+
+

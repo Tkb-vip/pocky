@@ -12,19 +12,20 @@
   <% end %>
 
 
-  <div class="field">
+  <div class="field box-1">
     <%= form.label :内容 %>
     <%= form.text_area :activities, id: :club_activities %>
   </div>
 
-  <div class="field">
-    <%= form.label :先生チェック %>
-    <%= form.check_box :tcheck, id: :club_tcheck %>
+  <div class="field check1 ">
+    <%= form.label :先生チェック  %>
+    <input type="radio" class="option-input radio" name="tcheck" checked />
   </div>
 
-  <div class="field">
+  <div class="field check2 ">
     <%= form.label :生徒チェック %>
-    <%= form.check_box :scheck, id: :club_scheck %>
+    <input type="radio" class="option-input radio" name="scheck" />
+
   </div>
 
   <div class="field">
@@ -50,4 +51,10 @@
   <div class="actions">
     <%= form.submit %>
   </div>
+
+ 
+
+	<input type="radio" class="option-input radio" name="cpipr02" checked />
+
+</div>
 <% end %>
