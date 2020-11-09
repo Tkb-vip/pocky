@@ -1,14 +1,14 @@
 <header>
  <div class="SideBySide">
-  <h1 class ="sample"><img src="pocky.png" alt="Pocky"></h1>
-  <a href="#"><h1>Pocky<h1></a>
+  <h1 class ="sample"><%= image_tag "/pocky.png" %></h1>
+  <h1>Pocky<h1>
  </div>
  <div class="right">
    <%= @today %> (<%= @yobi %>)
   </div>
  <nav id="global-nav">
     <ul class="nav nav-pills nav-justified">
-      <li><a href="/club_names">部活動一覧</a></li>
+      <li><a href="club_names">部活動一覧</a></li>
       <li><a href="weathers">天気</a></li>
       <li><a href="#">交通状況</a></li>
       <li><a href="#">お問い合わせ</a></li>
@@ -27,7 +27,9 @@
  <div style="text-align:center">
    <div class="row" style="text-align:center">
      <% ClubName.all.order(:sort).each do |club_name| %>
-       <div class="col-md-3 col-xs-offset-1 mybox"><%= club_name.name %></div>
+       <a href="clubs">
+         <span class="col-md-3 col-xs-offset-1 box"><%= club_name.name %></span>
+       </a>
      <% end %>
    </div>
  </div>
@@ -36,15 +38,14 @@
  <div class="row">
    <% @weather.each do |weather| %>
      <div class="col-md-2">
-     <%= weather.date.strftime("%m/%d %H:%M") %>
+     <div class="date"><%= weather.date.strftime("%m/%d %H:%M") %></div>
      <br>
      <div class="thumbnail"><img src="<%= weather_img(weather.weather_id) %>"></div>
      <br>
      <%= weather_string(weather.weather_id) %>
      <br>
-     <%= weather.temp_max %>
-     <br>
-     <%= weather.temp_min %>
+     <div class="max"><%= weather.temp_max %></div>
+     <div class="min"><%= weather.temp_min %></div>
      </div>
    <% end %>
   </div>

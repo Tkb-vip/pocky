@@ -1,8 +1,8 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-body {
 
+body {
   background-color: #fff;
   color: #333;
 
@@ -35,9 +35,7 @@ pre {
 }
 
 a {
-
   text-decoration: none;
-
   color: #000;
   font-size: 15px;
 
@@ -103,8 +101,6 @@ div {
 label {
   display: block;
 }
-
-
 label {
   display: block;
   width: 100%;
@@ -112,70 +108,76 @@ label {
   text-decoration: none;
   color: #ccc;
   font-weight: bold;
-  }
+}
 
-  ul li.current{
+ul li.current{
   border: 3px solid #ccc;
-  }
-  ul li.current a{
+ }
+ul li.current a{
   color: rgb(255, 255, 255);
-  }
-  ul li a:hover{
+ }
+ul li a:hover{
   color: rgb(5, 5, 5);
-  }
+}
 
-  .sample img {
-    width: 50px;
-    height: auto
-  }
+.sample img {
+  width: 50px;
+  height: auto
+ }
 
-  .SideBySide h1{
-    display:inline-block;
-    vertical-align:top;
-   }
-   
-   .mybox{
-    background: none;
-    border: 1px solid #2a3170;	/* 線の太さ・種類・色 */
-    margin-right: 50px; /* 外側の余白 */
-    margin-left: 50px;
-    margin-top: 30px;
-    margin-bottom: 10px;
-    padding: 20px; /* 内側の余白 */
-    padding-bottom: 30px;
-    padding-top: 30px;
-    position: relative;
-  }
-  .mybox:after{
-    background: none;
-    border: 1px solid #2a3170;	/* 線の太さ・種類・色 */
-    content: '';
-    position: absolute;
-    top: 3px;
-    left: 3px;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    display: flex;
-    justify-content: space-evenly;
-  }
+.SideBySide h1{
+  display:inline-block;
+  vertical-align:top;
+ }
 
-  .row.temp_max{
-    color:red;
-  }
+.box {
+  padding: 20px;
+  padding-bottom: 30px;
+  padding-top: 30px;
+  margin-right: 50px; /* 外側の余白 */
+  margin-left: 50px;
+  margin-top: 30px;
+  font-weight: bold;
+  color: #000;/*文字色*/
+  background-color: #FFF; 
+  display:block;
+  border: solid 3px #265592;/*線*/
+  border-radius: 10px;/*角の丸み*/
+}
+a .spanbox {
+  background-color:rgb(93, 64, 139); 
+  font-weight:bold;
+}
+a:hover .spanbox {
+  background-color:skyblue;
+  color:#000;
+}
 
-  .row.temp_min{
-    color:blue;
-  }
+h3{
+  padding-top:20px;
+}
+  
+.date{
+  padding-top:20px;
+}
 
-  .thumbnail {
-    display: inline-block;
-    height: 150px;
-    width: 150px;
-    margin-right: 15px;
-    margin-bottom: 20px;
+.max{
+  color:red;
+}
+
+.min{
+  color:blue;
+ }
+
+.thumbnail {
+   display: inline-block;
+   height: 150px;
+   width: 150px;
+   margin-right: 15px;
+   margin-bottom: 20px;
+   margin-top: 10px;
 }
 
 .thumbnail img {
-    height: 100%;
+  height: 100%;
 }
