@@ -31,6 +31,7 @@
         <td><%= link_to '詳細', club %></td>
         <td><%= link_to '編集', edit_club_path(club) %></td>
         <td><%= link_to '削除', club, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
         <td><p><b>コメント</b></p>
         <%= form_tag('/comments') do %>
           <%= hidden_field :comment, :club_id, :value => club.id %>
@@ -42,14 +43,17 @@
         
         <% club.comments.each do |c| %>
           <p>
-          <%= c.created_at.strftime("%Y-%m-%d %H:%M:%S") %>
+          <%= c.created_at.strftime("%m月%d日 %H時:%M分") %>
+          <%= link_to '削除', c, method: :delete, data: { confirm: 'このコメントを削除してもいいですか?' } %>
           </p>
           <p>
           <%= c.comment %>
           </p>
         <% end %>
         </td>
+
       </tr>
+
     <% end %>
   </tbody>
 </table>
