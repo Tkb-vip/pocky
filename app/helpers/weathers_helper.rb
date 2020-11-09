@@ -22,21 +22,21 @@ module WeathersHelper
     def weather_img(val)
         case val
         when 200,201,202,210,211,212,221,230,232
-            return "tenki/raiu.png"
+            return "/tenki/raiu.png"
         when 300,301,302,310,311,312,313,314,321
-            return "tenki/kirisame.png"
+            return "/tenki/kirisame.png"
         when 500,501,502,503,504,511,520,521,522,531
-            return "tenki/ame.png"
+            return "/tenki/ame.png"
         when 600,601,602,611,613,615,616,620,621,622
-            return "tenki/yuki.png"
+            return "/tenki/yuki.png"
         when 800
-            return "tenki/hare.png"
+            return "/tenki/hare.png"
         when 801,802
-            return "tenki/hobohare.png"
+            return "/tenki/hobohare.png"
         when 803,804
-            return "tenki/kumori.png"
+            return "/tenki/kumori.png"
         else 
-            return "tenki/yokisenu.png"
+            return "/tenki/yokisenu.png"
         end
     end
 end
