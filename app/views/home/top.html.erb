@@ -8,10 +8,10 @@
   </div>
  <nav id="global-nav">
     <ul class="nav nav-pills nav-justified">
-      <li><a href="club_names">部活動一覧</a></li>
-      <li><a href="weathers">天気</a></li>
-      <li><a href="#">交通状況</a></li>
-      <li><a href="#">お問い合わせ</a></li>
+      <li><%= link_to '部活動一覧', club_names_path %></li>
+      <li><%= link_to '天気', weathers_path %></li>
+      <li><%= link_to '交通状況', weathers_path %></li>
+      <li><%= link_to 'お問い合わせ', weathers_path %></li>
       <% if session[:username] == "" %>
       <li><%= link_to 'ログイン', home_login_path %></li>
       <% else %>
@@ -27,9 +27,9 @@
  <div style="text-align:center">
    <div class="row" style="text-align:center">
      <% ClubName.all.order(:sort).each do |club_name| %>
-       <a href="clubs">
-         <span class="col-md-3 col-xs-offset-1 box"><%= club_name.name %></span>
-       </a>
+       <%= link_to(clubs_path(club_name: club_name.id)) do %>
+         <div class="col-md-3 col-xs-offset-1 box"><%= club_name.name %></div>
+       <% end %>
      <% end %>
    </div>
  </div>

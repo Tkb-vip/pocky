@@ -140,16 +140,13 @@ ul li a:hover{
   font-weight: bold;
   color: #000;/*文字色*/
   background-color: #FFF; 
-  display:block;
+  display: block;
   border: solid 3px #265592;/*線*/
   border-radius: 10px;/*角の丸み*/
 }
-a .spanbox {
-  background-color:rgb(93, 64, 139); 
-  font-weight:bold;
-}
-a:hover .spanbox {
-  background-color:skyblue;
+
+.box:hover {
+  background-color:rgb(185, 196, 226);
   color:#000;
 }
 
