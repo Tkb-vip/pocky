@@ -5,9 +5,19 @@ class ClubsController < ApplicationController
   # GET /clubs.json
   #１０行目にdate～を追加する
   def index
-    @club_name_id = session[:club_name_id]
+    kensaku = 0
+    if params[:club_name_id].present?
+      kensaku = params[:club_name_id]
+    else
+      if session[:club_name_id].present?
+        kensaku = session[:club_name_id]
+      else
+        #ログインしてない場合
+      end
+    end
+
     #@clubs = Club.all
-    @clubs = Club.where(club_name_id: session[:club_name_id])
+    @clubs = Club.where(club_name_id: kensaku)
     #@comments = Comment.where(club_id: 1).order(created_at: :desc)
   end
 

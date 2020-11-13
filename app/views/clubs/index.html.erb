@@ -65,5 +65,8 @@
 </table>
 
 <br>
+<% if session[:admin] == true %>
+  <%= link_to '活動内容を入力する', new_club_path %>
+<% end %>
 
-<%= link_to '活動内容を入力する', new_club_path %>
+
