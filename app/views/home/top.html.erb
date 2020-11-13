@@ -1,58 +1,62 @@
-<header>
- <div class="SideBySide">
-  <h1 class ="sample"><%= image_tag "/pocky.png" %></h1>
-  <h1>Pocky<h1>
- </div>
- <div class="right">
-   <%= @today %> (<%= @yobi %>)
-  </div>
- <nav id="global-nav">
-    <ul class="nav nav-pills nav-justified">
-      <li><%= link_to '部活動一覧', club_names_path %></li>
-      <li><%= link_to '天気', weathers_path %></li>
-      <li><%= link_to '交通状況', weathers_path %></li>
-      <li><%= link_to 'お問い合わせ', weathers_path %></li>
-      <% if session[:username] == "" %>
-      <li><%= link_to 'ログイン', home_login_path %></li>
-      <% else %>
-      <li><%= link_to 'ログアウト', home_logout_path %></li>
-      <% end %>
-
-    </ul>
-  </nav>
-</header>
-
-<main>
- <h3>部活動一覧</h3>
- <div style="text-align:center">
-   <div class="row" style="text-align:center">
-     <% ClubName.all.order(:sort).each do |club_name| %>
-       <%= link_to(clubs_path(club_name: club_name.id)) do %>
-         <div class="col-md-3 col-xs-offset-1 box"><%= club_name.name %></div>
-       <% end %>
-     <% end %>
-   </div>
- </div>
-
- <h3>天気</h3>
- <div class="row">
-   <% @weather.each do |weather| %>
-     <div class="col-md-2">
-     <div class="date"><%= weather.date.strftime("%m/%d %H:%M") %></div>
-     <br>
-     <div class="thumbnail"><img src="<%= weather_img(weather.weather_id) %>"></div>
-     <br>
-     <%= weather_string(weather.weather_id) %>
-     <br>
-     <div class="max"><%= weather.temp_max %></div>
-     <div class="min"><%= weather.temp_min %></div>
+<body>
+  <div class="wrapper">
+   <header>
+     <div class="SideBySide">
+       <h1 class ="sample"><%= image_tag "/pocky.png" %></h1>
+       <h1>Pocky<h1>
      </div>
-   <% end %>
+     <div class="right">
+       <%= @today %> (<%= @yobi %>)
+     </div>
+     <nav id="global-nav">
+       <ul class="nav nav-pills nav-justified">
+          <li><%= link_to '部活動一覧', club_names_path %></li>
+          <li><%= link_to '天気', weathers_path %></li>
+          <li><%= link_to '交通状況', weathers_path %></li>
+          <li><%= link_to 'お問い合わせ', weathers_path %></li>
+         <% if session[:username] == "" %>
+           <li><%= link_to 'ログイン', home_login_path %></li>
+         <% else %>
+           <li><%= link_to 'ログアウト', home_logout_path %></li>
+         <% end %>
+       </ul>
+     </nav>
+   </header>
+
+   <main>
+     <h3>部活動一覧</h3>
+     <div style="text-align:center">
+       <div class="row" style="text-align:center">
+         <% ClubName.all.order(:sort).each do |club_name| %>
+           <%= link_to(clubs_path(club_name: club_name.id)) do %>
+             <div class="col-md-3 col-xs-offset-1 box"><%= club_name.name %></div>
+           <% end %>
+         <% end %>
+       </div>
+     </div>
+
+     <h3>天気</h3>
+     <div class="row">
+       <% @weather.each do |weather| %>
+         <div class="col-md-2">
+         <div class="date"><%= weather.date.strftime("%m/%d %H:%M") %></div>
+         <br>
+         <div class="thumbnail"><img src="<%= weather_img(weather.weather_id) %>"></div>
+         <br>
+         <%= weather_string(weather.weather_id) %>
+         <br>
+         <div class="max"><%= weather.temp_max %></div>
+         <div class="min"><%= weather.temp_min %></div>
+         </div>
+       <% end %>
+     </div>
+
+     <h3>交通状況</h3>
+   </main>
+
+   <footer>
+     <p>Copyright © 2020 Pocky All Rights Reserved.</p>
+   </footer>
+
   </div>
-
- <h3>交通状況</h3>
-</main>
-
-<footer>
-
-</footer>
+</body>
