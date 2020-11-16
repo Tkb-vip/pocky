@@ -40,17 +40,25 @@
 
   <div class="field">
     <%= form.label :場所 %>
-    <%= form.number_field :place_id, id: :club_place_id %>
+    <div class="row">
+    <% Place.all.order(:sort).each do |p| %>
+     <div class="col-md-3">
+      <p><%= form.radio_button :place_id,p.id %><%= p.name %></P>
+      <%= image_tag "places/#{p.place_image}", size: "240x180" unless p.place_image.blank? %></p>
+      <br>
+    </div>
+    <% end %>
   </div>
 
+
   <div class="field">
-    <%= form.label :部活名 %>
-    <%= form.number_field :club_name_id, id: :club_club_name_id %>
+    <%= form.hidden_field :club_name_id, id: :club_club_name_id,:value=>session[:club_name_id] %>
   </div>
 
   <div class="actions">
     <%= form.submit %>
   </div>
+
 
  
 

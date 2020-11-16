@@ -52,12 +52,6 @@
         <% end %>
         </td>
 
-        <% Place.all.order(:sort).each do |p| %>
-          <label>
-          <%= form.radio_button :place_id, p.id%>
-          <%= p.name %> <%= ???? %>
-          </label>
-        <% end %>
       </tr>
 
     <% end %>

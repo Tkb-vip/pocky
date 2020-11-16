@@ -77,7 +77,7 @@ Place.create(name: "第６演習室",place_image: "WIN_20201009_15_14_27_Pro.jpg
 Place.create(name: "総合実践室",place_image: "WIN_20201009_15_12_04_Pro.jpg", sort: 0)
 Place.create(name: "作法室",place_image:"WIN_20201009_15_10_22_Pro.jpg", sort: 0)
 Place.create(name: "洋室",place_image: "WIN_20201009_15_09_49_Pro.jpg", sort: 0)
-Place.create(name: "美術室",place_image:" WIN_20201009_15_11_24_Pro.jpg",sort: 0)
+Place.create(name: "美術室",place_image:"WIN_20201009_15_11_24_Pro.jpg",sort: 0)
 Place.create(name: "家庭経営保育室",place_image: "WIN_20201009_15_09_31_Pro.jpg", sort: 0)
 Place.create(name: "書道教室",place_image: "", sort: 0)
 Place.create(name: "視聴覚室",place_image:"WIN_20201012_11_17_27_Pro.jpg", sort: 0)
