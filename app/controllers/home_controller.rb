@@ -5,10 +5,12 @@ class HomeController < ApplicationController
   end
 
   def login
+    flash.now[:notice] = session[:username]
     render "top"
   end
 
   def logout
+    flash.now[:notice] = session[:username]+"からログアウトしました"
     session[:username]=""
     session[:teacher]=false
     session[:admin]=false
