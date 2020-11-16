@@ -2,6 +2,7 @@
 
 <h1>部活動</h1>
 
+
 <table>
   <thead>
     <tr>
@@ -59,5 +60,10 @@
 </table>
 
 <br>
+<% if session[:teacher] == true or session[:admin] == true %>
+  <%= link_to '活動内容を入力する', new_club_path %>
+<% end %>
 
-<%= link_to '活動内容を入力する', new_club_path %>
+
+
+
