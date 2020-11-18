@@ -5,7 +5,7 @@ class HomeController < ApplicationController
   end
 
   def login
-    flash.now[:notice] = session[:username]
+    flash.now[:notice] = session[:username]+"にログインしました"
     render "top"
   end
 

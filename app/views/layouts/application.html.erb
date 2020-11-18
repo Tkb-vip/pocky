@@ -13,7 +13,7 @@
   <div class="alert"><%= flash[:notice] %></div>
 
   <%= session[:username] %>:
-
+  
   <% if session[:admin] %>
     "管理者"
   <% else %>
@@ -23,7 +23,10 @@
       "生徒"
     <% end %>
   <% end %>
+  
 
   <%= yield %>
+ 
+  <%= link_to "ホームに戻る", 'http://localhost:3000/', class: 'btn btn-info' %>
   </body>
 </html>
