@@ -13,7 +13,7 @@
           <li><%= link_to '部活動一覧', club_names_path %></li>
           <li><%= link_to '天気', weathers_path %></li>
           <li><%= link_to '交通状況', weathers_path %></li>
-          <li><%= link_to 'お問い合わせ', weathers_path %></li>
+          <li><%= link_to 'お問い合わせ', otoiawases_path %></li>
          <% if session[:username] == "" %>
            <li><%= link_to 'ログイン', home_login_path %></li>
          <% else %>
