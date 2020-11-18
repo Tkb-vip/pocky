@@ -19,13 +19,12 @@
 
   <div class="field check1">
     <%= form.label :先生チェック  %>
-    <input type="radio" class="option-input radio1" name="tcheck" checked />
+    <%= form.check_box :tcheck, {id: :club_tcheck, class: "option-input radio1", checked: true} %>
   </div>
 
   <div class="field check2">
     <%= form.label :生徒チェック %>
-    <input type="radio" class="option-input radio2" name="scheck" />
-
+    <%= form.check_box :scheck, {id: :club_scheck, class: "option-input radio2"} %>
   </div>
 
   <div class="field">
