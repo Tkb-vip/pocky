@@ -1,0 +1,20 @@
+<div class="otoiawase">
+  <%= form_with(model: otoiawase, local: true) do |form| %>
+    <% if otoiawase.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(otoiawase.errors.count, "error") %> prohibited this otoiawase from being saved:</h2>
+  
+        <ul>
+        <% otoiawase.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+  
+    <div class="actions">
+      <%= form.submit %>
+    </div>
+  <% end %>
+</div>
+
