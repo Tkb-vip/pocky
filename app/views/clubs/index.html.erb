@@ -1,19 +1,31 @@
 <p id="notice"><%= notice %></p>
 
 <h1>部活動</h1>
+<div class="right">
+       <%= @today %> (<%= @yobi %>)
+</div>
+
+<p>
+<%= @club_find[0].activities %>
+</P>
+<p>
+<%= @club_find[0].place.name %>
+</P>
 
 
-<table>
+
+
+
+
+<div class="text_left">
+<table class="table table-bordered">
   <thead>
     <tr>
-      <th>部活ID</th>
+      <th>部活名</th>
       <th>活動内容</th>
       <th>先生チェック</th>
       <th>生徒チェック</th>
-      <th>先生チェック日時</th>
-      <th>生徒チェック日時</th>
       <th>場所</th>
-      <th>部活動名</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -21,19 +33,19 @@
   <tbody>
     <% @clubs.each do |club| %>
       <tr>
-        <td><%= club.id %></td>
+        <td rowspan="2"><%= club.club_name.name %></td>
         <td><%= club.activities %></td>
-        <td><%= club.tcheck %></td>
-        <td><%= club.scheck %></td>
-        <td><%= club.tcheck_updated_at.strftime("%Y-%m-%d %H:%M:%S") %></td>
-        <td><%= club.scheck_updated_at.strftime("%Y-%m-%d %H:%M:%S") %></td>
-        <td><%= club.place_id %></td>
-        <td><%= club.club_name_id %></td>
+        <td><%= club.tcheck %><br><%= club.tcheck_updated_at.strftime("%Y-%m-%d %H:%M:%S") %></td>
+        <td><%= club.scheck %><br><%= club.scheck_updated_at.strftime("%Y-%m-%d %H:%M:%S") %></td>
+        <td><%= club.place.name %></td>
         <td><%= link_to '詳細', club %></td>
         <td><%= link_to '編集', edit_club_path(club) %></td>
         <td><%= link_to '削除', club, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
 
-        <td><p><b>コメント</b></p>
+      <tr>
+        <td colspan="7">
+        <p><b>コメント</b></p>
         <%= form_tag('/comments') do %>
           <%= hidden_field :comment, :club_id, :value => club.id %>
           <p>
@@ -52,12 +64,11 @@
           </p>
         <% end %>
         </td>
-
       </tr>
-
-    <% end %>
+      <% end %>
   </tbody>
 </table>
+</div>
 
 <br>
 <% if session[:teacher] == true or session[:admin] == true %>
@@ -68,5 +79,3 @@
 <%= link_to :back do %>
   <button>戻る</button>
 <% end %>
-
-

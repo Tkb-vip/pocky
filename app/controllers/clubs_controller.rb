@@ -6,8 +6,8 @@ class ClubsController < ApplicationController
   #１０行目にdate～を追加する
   def index
     kensaku = 0
-    if params[:club_name_id].present?
-      kensaku = params[:club_name_id]
+    if params[:club_name].present?
+      kensaku = params[:club_name]
     else
       if session[:club_name_id].present?
         kensaku = session[:club_name_id]
@@ -15,10 +15,24 @@ class ClubsController < ApplicationController
         #ログインしてない場合
       end
     end
-
+  
+    @today = Date.today
+     if params[:select_date].present?
+      @today = params[:select_date].to_date
+     end
+    week = ['日', '月', '火', '水', '木', '金', '土']
+    @yobi = week[@today.wday]
+    @tomorrow = @today+1
+    @yesterday = @today-1
+  
+    #start_time = DateTime.new(@today.year, @today.month, @today.day-1, 0, 0, 0)
+    #end_time = DateTime.new(@today.year, @today.month, @today.day, 23, 59, 59)
+    #@weather = Weather.where("date between ? and ?", start_time, end_time).order(:date).limit(6)
+  
     #@clubs = Club.all
-    @clubs = Club.where(club_name_id: kensaku)
+    @clubs = Club.where(club_name_id: kensaku).order(created_at: :desc)
     #@comments = Comment.where(club_id: 1).order(created_at: :desc)
+    @club_find = Club.find_by(club_name_id: kensaku).order(created_at: :desc).limit(1)
   end
 
   # GET /clubs/1
