@@ -152,5 +152,19 @@
     display: block;
 }
 
+.text_left {
+	text-align: left;
+}
+  
+tr{
+  // display: inline-block;
+  font-size: 18px;
+  font-weight: bold;
+  word-spacing : 20px;
+}
+th{
+	letter-spacing: 0.05em;
+	line-height: 24px;
+}
 
 
