@@ -1,0 +1,2 @@
+class Otoiawase < ApplicationRecord
+end

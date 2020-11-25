@@ -165,7 +165,25 @@
    padding-bottom: 120px;/*←footerの高さ*/
    box-sizing: border-box;/*←全て含めてmin-height:100vhに*/
  }
- 
+
+ .homeback{
+  text-align: left;
+  width: 100%;
+  position:relative;
+  top: 30px;
+  left:30px; }
+
+.home{
+ .homeback{
+   text-align: left;
+   width: 100%;
+	 position:relative;
+   top: 70px;
+   left:150px; }
+  }
+
+
+
  footer{
    width: 100%;
    background-color: rgb(224, 158, 158);
@@ -176,3 +194,4 @@
   position: absolute;/*←絶対位置*/
    bottom: 0; /*下に固定*/
  }
+

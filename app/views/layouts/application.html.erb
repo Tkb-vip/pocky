@@ -2,13 +2,18 @@
 <html>
   <head>
     <title>Pocky</title>
+
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
+  <body class="<%= controller.controller_name %>">
+
+  <div class="homeback">
+  <%= link_to "ホームに戻る", 'http://localhost:3000/', class: 'btn btn-info' %>
+  </div>
 
   <div class="alert"><%= flash[:notice] %></div>
 
@@ -27,6 +32,5 @@
 
   <%= yield %>
  
-  <%= link_to "ホームに戻る", 'http://localhost:3000/', class: 'btn btn-info' %>
   </body>
 </html>
