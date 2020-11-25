@@ -5,12 +5,31 @@
        <%= @today %> (<%= @yobi %>)
 </div>
 
+<div><%= link_to "翌日>>",clubs_path(club_name: @club_name,activitiesdate: @tomorrow) %></div>
+<div><%= link_to "<<前日",clubs_path(club_name: @club_name,activitiesdate: @yesterday) %></div>
+<% if @club_find.blank? %>
+  <p>データがありません</p>
+<% else %>
+<table border = 1>
+<tr>
+<td>
 <p>
-<%= @club_find[0].activities %>
+<%= @club_find.activities %>
 </P>
+</td>
+<td>
 <p>
-<%= @club_find[0].place.name %>
+<%= @club_find.place.name %>
+<br>
+<% if @club_find.place.place_image.present? %>
+ <br>
+ <%= image_tag "places/#{@club_find.place.place_image}", size: "240x180" %>
+ <% end %>
 </P>
+</td>
+</tr>
+</table>
+<% end %>
 
 
 

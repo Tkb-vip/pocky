@@ -8,17 +8,19 @@ class ClubsController < ApplicationController
     kensaku = 0
     if params[:club_name].present?
       kensaku = params[:club_name]
+      @club_name = params[:club_name]
     else
       if session[:club_name_id].present?
         kensaku = session[:club_name_id]
+        @club_name = session[:club_name_id]
       else
         #ログインしてない場合
       end
     end
   
     @today = Date.today
-     if params[:select_date].present?
-      @today = params[:select_date].to_date
+     if params[:activitiesdate].present?
+      @today = params[:activitiesdate].to_date
      end
     week = ['日', '月', '火', '水', '木', '金', '土']
     @yobi = week[@today.wday]
@@ -30,9 +32,10 @@ class ClubsController < ApplicationController
     #@weather = Weather.where("date between ? and ?", start_time, end_time).order(:date).limit(6)
   
     #@clubs = Club.all
+   
     @clubs = Club.where(club_name_id: kensaku).order(created_at: :desc)
     #@comments = Comment.where(club_id: 1).order(created_at: :desc)
-    @club_find = Club.find_by(club_name_id: kensaku).order(created_at: :desc).limit(1)
+    @club_find = Club.find_by(club_name_id: kensaku,activitiesdate: @today)
   end
 
   # GET /clubs/1
@@ -97,6 +100,6 @@ class ClubsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def club_params
-      params.require(:club).permit(:id, :activities, :tcheck, :scheck, :tcheck_updated_at, :scheck_updated_at, :place_id, :club_name_id)
+      params.require(:club).permit(:id, :activities, :tcheck, :scheck, :tcheck_updated_at, :scheck_updated_at, :place_id, :club_name_id,:activitiesdate)
     end
 end

@@ -11,6 +11,10 @@
     </div>
   <% end %>
 
+  <div class="field">
+  <%= form.label :表示日 %>
+  <%= form.date_select :activitiesdate, id: :club_activitiesdate %>
+  </div>
 
   <div class="field box-1">
     <%= form.label :内容 %>
