@@ -10,7 +10,7 @@
 <% if @club_find.blank? %>
   <p>データがありません</p>
 <% else %>
-<table border = 1>
+<table border = 1 align="center">
 <tr>
 <td>
 <p>
@@ -28,7 +28,47 @@
 </P>
 </td>
 </tr>
+<tr>
+<td>
+
+ <%= form_tag('/comments') do %>
+  <%= hidden_field :comment, :club_id, :value => @club_find.id %>
+  <p>
+  <%= text_field :comment, :comment %>
+  <%= submit_tag "コメントを追加する" %>
+  </p>
+<% end %>
+
+<% unless @club_find.comments.present? %>
+ <p>コメントはありません</p>
+ <% else %>
+<% @club_find.comments.each do |c| %>
+  <p>
+  <%= c.created_at.strftime("%m月%d日 %H時%M分") %>
+  <%= link_to '削除', c, method: :delete, data: { confirm: 'このコメントを削除してもいいですか?' } %>
+  </p>
+  <p>
+  <%= c.comment %>
+  </p>
+<% end %>
+<% end %>
+
+</td>
+<td>
+<p>
+<%= @club_find.tcheck %>
+<br>
+<%= @club_find.tcheck_updated_at.strftime("%Y-%m-%d %H:%M:%S") %>
+</p>
+<p>
+<%= @club_find.scheck %>
+<br>
+<%= @club_find.scheck_updated_at.strftime("%Y-%m-%d %H:%M:%S") %>
+</p>
+</td>
+</tr>
 </table>
+
 <% end %>
 
 
