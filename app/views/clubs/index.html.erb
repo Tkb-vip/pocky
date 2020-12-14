@@ -82,7 +82,9 @@
 
 <br>
 <% if session[:teacher] == true or session[:admin] == true %>
-  <%= link_to '活動内容を入力する', new_club_path %>
+<div class="lnk">
+<%= link_to '活動内容を入力する', new_club_path,{class: "btn btn-success"} %>
+</div>
 <% end %>
 
 <br>
