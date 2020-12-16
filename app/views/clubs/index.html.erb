@@ -1,6 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <h1>部活動</h1>
+<img src="<%= club_name_illust(@club_name.to_i) %>">
 <div class="row" >
 <div class="col-md-4">
  <%= link_to "<<前日",clubs_path(club_name: @club_name,activitiesdate: @yesterday) %>

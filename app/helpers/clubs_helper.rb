@@ -1,2 +1,61 @@
 module ClubsHelper
+    def club_name_illust(val)
+        case val
+        when 1
+            return "/club_img/baseball.jpg"
+        when 2
+            return "/club_img/volleyball.jpg"
+        when 3
+            return "/club_img/basketball.jpg"
+        when 4
+            return "/club_img/basketball.jpg"
+        when 5
+            return "/club_img/tabletennis.jpg"
+        when 6
+            return "/club_img/tennis.jpg"
+        when 7
+            return "/club_img/rikuzyou.jpg"
+        when 8
+            return "/club_img/badominton.jpg"
+        when 9
+            return "/club_img/softball.jpg"
+        when 10
+            return "/club_img/kendo.jpg"
+        when 11
+            return "/club_img/kyudo.jpg"
+        when 12
+            return "/club_img/soccer.jpg"
+        when 13
+            return "/club_img/bunngei.jpg"
+        when 14
+            return "/club_img/bizyutu.jpg"
+        when 15
+            return "/club_img/syashinn.jpg"
+        when 16
+            return "/club_img/sado.jpg"
+        when 17
+            return "/club_img/kadou.jpg"
+        when 18
+            return "/club_img/suibu.jpg"
+        when 19
+            return "/club_img/keizaityousa.jpg"
+        when 20
+            return "/club_img/syuzann.jpg"
+        when 21
+            return "/club_img/wa-puro.jpg"
+        when 22
+            return "/club_img/housou.jpg"
+        when 23
+            return "/club_img/boki.jpg"
+        when 24
+            return "/club_img/gassyou.jpg"
+        when 25
+            return "/club_img/tyouridoukoukai.jpg"
+        when 26
+            return "/club_img/dance.jpg"
+        else 
+            return "予期せぬ天候"
+        end
+    end
+
 end
