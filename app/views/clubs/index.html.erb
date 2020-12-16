@@ -1,16 +1,21 @@
 <p id="notice"><%= notice %></p>
 
 <h1>部活動</h1>
-<div class="right">
-       <%= @today %> (<%= @yobi %>)
+<div class="row" >
+<div class="col-md-4">
+ <%= link_to "<<前日",clubs_path(club_name: @club_name,activitiesdate: @yesterday) %>
+ </div>
+ <div class="col-md-4">
+   <%= @today %> (<%= @yobi %>)
 </div>
-
-<div><%= link_to "翌日>>",clubs_path(club_name: @club_name,activitiesdate: @tomorrow) %></div>
-<div><%= link_to "<<前日",clubs_path(club_name: @club_name,activitiesdate: @yesterday) %></div>
+<div class="col-md-4">
+ <%= link_to "翌日>>",clubs_path(club_name: @club_name,activitiesdate: @tomorrow) %>
+</div>
+</div>
 <% if @club_find.blank? %>
   <p>データがありません</p>
 <% else %>
-<table border = 1>
+<table border = 1 align="center">
 <tr>
 <td>
 <p>
@@ -28,70 +33,58 @@
 </P>
 </td>
 </tr>
+<tr>
+<td>
+
+ <%= form_tag('/comments') do %>
+  <%= hidden_field :comment, :club_id, :value => @club_find.id %>
+  <p>
+  <%= text_field :comment, :comment %>
+  <%= submit_tag "コメントを追加する" %>
+  </p>
+<% end %>
+
+<% unless @club_find.comments.present? %>
+ <p>コメントはありません</p>
+ <% else %>
+<% @club_find.comments.each do |c| %>
+  <p>
+  <%= c.created_at.strftime("%m月%d日 %H時%M分") %>
+  <%= link_to '削除', c, method: :delete, data: { confirm: 'このコメントを削除してもいいですか?' } %>
+  </p>
+  <p>
+  <%= c.comment %>
+  </p>
+<% end %>
+<% end %>
+
+</td>
+<td>
+<p>
+先生チェック <%= @club_find.tcheck %>
+<br>
+<%= @club_find.tcheck_updated_at.strftime("%Y-%m-%d %H:%M:%S") %>
+</p>
+<p>
+生徒チェック <%= @club_find.scheck %>
+<br>
+<%= @club_find.scheck_updated_at.strftime("%Y-%m-%d %H:%M:%S") %>
+</p>
+</td>
+</tr>
 </table>
+<div class="lank">
+<%= link_to '編集', edit_club_path(@club_find),{class: "btn btn-primary"} %>
+<%= link_to '削除', @club_find, {class: "btn btn-danger",method: :delete,data: { confirm: 'Are you sure?' }} %>
+</div>
 <% end %>
 
 
-
-
-
-
-<div class="text_left">
-<table class="table table-bordered">
-  <thead>
-    <tr>
-      <th>部活名</th>
-      <th>活動内容</th>
-      <th>先生チェック</th>
-      <th>生徒チェック</th>
-      <th>場所</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @clubs.each do |club| %>
-      <tr>
-        <td rowspan="2"><%= club.club_name.name %></td>
-        <td><%= club.activities %></td>
-        <td><%= club.tcheck %><br><%= club.tcheck_updated_at.strftime("%Y-%m-%d %H:%M:%S") %></td>
-        <td><%= club.scheck %><br><%= club.scheck_updated_at.strftime("%Y-%m-%d %H:%M:%S") %></td>
-        <td><%= club.place.name %></td>
-        <td><%= link_to '詳細', club %></td>
-        <td><%= link_to '編集', edit_club_path(club) %></td>
-        <td><%= link_to '削除', club, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-
-      <tr>
-        <td colspan="7">
-        <p><b>コメント</b></p>
-        <%= form_tag('/comments') do %>
-          <%= hidden_field :comment, :club_id, :value => club.id %>
-          <p>
-          <%= text_field :comment, :comment %>
-          <%= submit_tag "コメントを追加する" %>
-          </p>
-        <% end %>
-        
-        <% club.comments.each do |c| %>
-          <p>
-          <%= c.created_at.strftime("%m月%d日 %H時:%M分") %>
-          <%= link_to '削除', c, method: :delete, data: { confirm: 'このコメントを削除してもいいですか?' } %>
-          </p>
-          <p>
-          <%= c.comment %>
-          </p>
-        <% end %>
-        </td>
-      </tr>
-      <% end %>
-  </tbody>
-</table>
-</div>
-
 <br>
 <% if session[:teacher] == true or session[:admin] == true %>
-  <%= link_to '活動内容を入力する', new_club_path %>
+<div class="lnk">
+<%= link_to '活動内容を入力する', new_club_path,{class: "btn btn-success"} %>
+</div>
 <% end %>
 
 <br>
