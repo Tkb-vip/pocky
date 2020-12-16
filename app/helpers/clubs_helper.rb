@@ -58,4 +58,63 @@ module ClubsHelper
         end
     end
 
+    def club_name(val)
+        case val
+        when 1
+            return "野球部"
+        when 2
+            return "バレーボール部"
+        when 3
+            return "男子バスケットボール部"
+        when 4
+            return "女子バスケットボール部"
+        when 5
+            return "卓球部"
+        when 6
+            return "ソフトテニス部"
+        when 7
+            return "陸上競技部"
+        when 8
+            return "バドミントン部"
+        when 9
+            return "ソフトボール部"
+        when 10
+            return "剣道部"
+        when 11
+            return "弓道部"
+        when 12
+            return "サッカー部"
+        when 13
+            return "文芸部"
+        when 14
+            return "美術部"
+        when 15
+            return "写真部"
+        when 16
+            return "茶道部"
+        when 17
+            return "華道部"
+        when 18
+            return "吹奏楽部"
+        when 19
+            return "経済調査部"
+        when 20
+            return "珠算部"
+        when 21
+            return "ワープロ・コンピュータ部"
+        when 22
+            return "放送部"
+        when 23
+            return "簿記部"
+        when 24
+            return "合唱同好会"
+        when 25
+            return "調理同好会"
+        when 26
+            return "ダンス同好会"
+        else 
+            return "エラーが発生しました"
+        end
+    end
+
 end
