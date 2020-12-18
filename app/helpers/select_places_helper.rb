@@ -1,0 +1,2 @@
+module SelectPlacesHelper
+end
