@@ -12,7 +12,7 @@
        <ul class="nav nav-pills nav-justified">
           <li><%= link_to '部活動一覧', club_names_path %></li>
           <li><%= link_to '天気', weathers_path %></li>
-          <li><%= link_to '交通状況', 'https://trafficinfo.westjr.co.jp/chugoku.html' %></li>
+          <li><%= link_to "交通状況", "https://trafficinfo.westjr.co.jp/chugoku.html", target: :_blank, rel: "noopener noreferrer" %></li>
           <li><%= link_to 'お問い合わせ', otoiawases_path %></li>
          <% if session[:username] == "" %>
            <li><%= link_to 'ログイン', home_login_path %></li>
@@ -20,24 +20,12 @@
            <li><%= link_to 'ログアウト', home_logout_path %></li>
          <% end %>
        </ul>
-       <p>↑</p>
-       <p>別のサイトへ飛びます</p>
+      
      </nav>
    </header>
 
    <main>
-     <h3>部活動一覧</h3>
-     <div style="text-align:center">
-       <div class="row" style="text-align:center">
-         <% ClubName.all.order(:sort).each do |club_name| %>
-           <%= link_to(clubs_path(club_name: club_name.id)) do %>
-             <div class="col-md-3 col-xs-offset-1 box"><%= club_name.name %></div>
-           <% end %>
-         <% end %>
-       </div>
-     </div>
-
-     <h3>天気</h3>
+   <h3>天気</h3>
      <div class="row">
        <% @weather.each do |weather| %>
          <div class="col-md-2">
@@ -52,6 +40,19 @@
          </div>
        <% end %>
      </div>
+     
+     <h3>部活動一覧</h3>
+     <div style="text-align:center">
+       <div class="row" style="text-align:center">
+         <% ClubName.all.order(:sort).each do |club_name| %>
+           <%= link_to(clubs_path(club_name: club_name.id)) do %>
+             <div class="col-md-3 col-xs-offset-1 box"><%= club_name.name %></div>
+           <% end %>
+         <% end %>
+       </div>
+     </div>
+
+     
    </main>
 
    <footer>
