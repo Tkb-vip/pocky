@@ -204,3 +204,14 @@
    bottom: 0; /*下に固定*/
  }
 
+ .clubillust {
+  display: inline-block;
+  height: 50px;
+  width: 50px;
+  background-repeat:  no-repeat;              /* 背景の繰り返し設定 */
+  background-position: right center;          /* 背景の位置指定 */
+}
+
+.clubillust img {
+ height: 100%;
+}

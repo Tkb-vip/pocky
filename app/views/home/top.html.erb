@@ -40,19 +40,18 @@
          </div>
        <% end %>
      </div>
-     
+
      <h3>部活動一覧</h3>
      <div style="text-align:center">
        <div class="row" style="text-align:center">
          <% ClubName.all.order(:sort).each do |club_name| %>
            <%= link_to(clubs_path(club_name: club_name.id)) do %>
-             <div class="col-md-3 col-xs-offset-1 box"><%= club_name.name %></div>
+             <div class="col-md-3 col-xs-offset-1 box"><%= club_name.name %>
+             <span class="clubillust"><img src="<%= club_name_illust(club_name.id) %>"></span></div>
            <% end %>
          <% end %>
        </div>
      </div>
-
-     
    </main>
 
    <footer>
