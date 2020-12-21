@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20201125024101) do
+ActiveRecord::Schema.define(version: 20201218051158) do
 
   create_table "club_names", force: :cascade do |t|
     t.string "name"
@@ -49,6 +49,13 @@ ActiveRecord::Schema.define(version: 20201125024101) do
     t.string "place_image"
     t.text "memo"
     t.integer "sort"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "select_places", force: :cascade do |t|
+    t.integer "club_id"
+    t.integer "place_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
