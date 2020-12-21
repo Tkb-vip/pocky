@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :select_places
   resources :otoiawases
   resources :users
   resources :weathers

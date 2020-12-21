@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Id:</strong>
+  <%= @select_place.id %>
+</p>
+
+<p>
+  <strong>Club:</strong>
+  <%= @select_place.club_id %>
+</p>
+
+<p>
+  <strong>Place:</strong>
+  <%= @select_place.place_id %>
+</p>
+
+<%= link_to 'Edit', edit_select_place_path(@select_place) %> |
+<%= link_to 'Back', select_places_path %>
