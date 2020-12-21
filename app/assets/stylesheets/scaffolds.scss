@@ -85,14 +85,14 @@
    background-color: #f0f0f0;
  
    h2 {
-     text-align: left;
-     font-weight: bold;
-     padding: 5px 5px 5px 15px;
-     font-size: 12px;
-     margin: -7px -7px 0;
-     background-color: #c00;
-     color: #fff;
-   }
+    text-align: left;
+    font-weight: bold;
+    padding: 5px 5px 5px 15px;
+    font-size: 12px;
+    margin: -7px -7px 0;
+    background-color: #c00;
+    color: #fff;
+  }
  
    ul li {
      font-size: 12px;
@@ -104,10 +104,15 @@
    width: 50px;
    height: auto
   }
+
+  h1{
+    font-weight: bolder;
+  }
  
  .SideBySide h1{
    display:inline-block;
    vertical-align:top;
+   color: #fff
   }
  
  .box {
@@ -126,12 +131,14 @@
  }
  
  .box:hover {
-   background-color:rgb(185, 196, 226);
+   background-color:rgb(208, 216, 240);
    color:#000;
  }
  
  h3{
-   padding-top:20px;
+   font-weight: bold;
+   padding-top:10px;
+   padding-bottom: 10px;
  }
    
  .date{
@@ -159,6 +166,12 @@
    height: 100%;
  }
 
+ header{
+  background-color: rgb(224, 158, 158);
+  padding-top: 20px;
+  padding-bottom: 20px;
+ }
+
  footer{
    /*footerの装飾*/
    width: 100%;
@@ -182,13 +195,14 @@
   top: 30px;
   left:30px; }
 
-.home{
- .homeback{
-   text-align: left;
-   width: 100%;
-	 position:relative;
-   top: 70px;
-   left:150px; }
+ .home{
+   .homeback{
+     text-align: left;
+     width: 100%;
+	   position:relative;
+     top: 70px;
+     left:150px; 
+    }
   }
 
 
@@ -199,19 +213,18 @@
    color: #fff;
    text-align: center;
    padding: 30px 0;
- 
-  position: absolute;/*←絶対位置*/
+   position: absolute;/*←絶対位置*/
    bottom: 0; /*下に固定*/
- }
+  }
 
  .clubillust {
-  display: inline-block;
-  height: 50px;
-  width: 50px;
-  background-repeat:  no-repeat;              /* 背景の繰り返し設定 */
-  background-position: right center;          /* 背景の位置指定 */
-}
+   display: inline-block;
+   height: 50px;
+   width: 50px;
+   background-repeat:  no-repeat;              /* 背景の繰り返し設定 */
+   background-position: right center;          /* 背景の位置指定 */
+ }
 
-.clubillust img {
- height: 100%;
-}
+ .clubillust img {
+   height: 100%;
+ }
