@@ -10,7 +10,7 @@
    <thead>
      <tr>
        <% if i == 0 %>
-       <th>日時</th>
+       <th><mark>日時</mark></th>
        <% end %>
        <th scope="col"><strong><div class="date"><%= weather.date.strftime("%m/%d %H:%M") %></div></strong></th>
      </tr>
@@ -18,37 +18,37 @@
    <tbody>
      <tr>
        <% if i == 0 %>
-       <th scope="row">天候</th>
+       <th scope="row"><mark>天候</mark></th>
        <% end %>
        <td><div class="thumbnail"><img src="<%= weather_img(weather.weather_id) %>"></div></td>
      </tr>
      <tr>
        <% if i == 0 %>
-       <th scope="row">天候</th>
+       <th scope="row"><mark>天候</mark></th>
        <% end %>
        <td><%= weather_string(weather.weather_id) %></td>
      </tr>
      <tr>
        <% if i == 0 %>
-       <th scope="row" nowrap>最高気温</th>
+       <th scope="row" nowrap><mark>最高気温</mark></th>
        <% end %>
        <td><div class="max"><%= weather.temp_max %></div></td>
      </tr>
      <tr>
        <% if i == 0 %>
-       <th scope="row">最低気温</th>
+       <th scope="row"><mark>最低気温</mark></th>
        <% end %>
        <td><div class="min"><%= weather.temp_min %></div></td>
      </tr>
      <tr>
        <% if i == 0 %>
-       <th scope="row">体感気温</th>
+       <th scope="row"><mark>体感気温</mark></th>
        <% end %>
        <td><%= weather.temp_feel %></td>
      </tr>  
      <tr>
        <% if i == 0 %>
-       <th scope="row">降水量</th>
+       <th scope="row"><mark>降水量</mark></th>
        <% end %>
        <td><%= weather.rainfall %></td>
      </tr>

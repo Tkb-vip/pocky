@@ -10,20 +10,19 @@
      </div>
      <nav id="global-nav">
 
-
       <div class="bukatu">
-        <img src= "/bukatu.jpg">
+        <img src= "/bukatu.png">
       </div>
       <div class="tenki">
-        <img src= "/tenki.jpg">
+        <img src= "/tenki.png">
       </div>
-      <img src= "/koutuu.jpg">
+      <img src= "/koutuu.png">
 
 
   
        <ul class="nav nav-pills nav-justified">
           <li><%= link_to '部活動一覧', club_names_path %></li>
-          <li><%= link_to '天気', weathers_path %></li>
+          <li><%= link_to '天気の詳細', weathers_path %></li>
           <li><%= link_to "交通状況", "https://trafficinfo.westjr.co.jp/chugoku.html", target: :_blank, rel: "noopener noreferrer" %></li>
           <li><%= link_to 'お問い合わせ', otoiawases_path %></li>
          <% if session[:username] == "" %>
