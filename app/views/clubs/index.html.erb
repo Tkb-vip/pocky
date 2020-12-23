@@ -66,12 +66,22 @@
 </td>
 <td>
 <p>
-先生チェック <%= @club_find.tcheck %>
+先生チェック  
+<% if  @club_find.tcheck %>
+<%= image_tag "/check.jpg", size: "160x100" %>
+<% else %>
+<%= image_tag "/checknot.png", size: "120x100" %>
+<% end %>
 <br>
 <%= @club_find.tcheck_updated_at.strftime("%Y-%m-%d %H:%M:%S") %>
 </p>
 <p>
-生徒チェック <%= @club_find.scheck %>
+生徒チェック 
+<% if  @club_find.scheck %>
+<%= image_tag "/check.jpg", size: "160x100" %>
+<% else %>
+<%= image_tag "/checknot.png", size: "120x100" %>
+<% end %>
 <br>
 <%= @club_find.scheck_updated_at.strftime("%Y-%m-%d %H:%M:%S") %>
 </p>
