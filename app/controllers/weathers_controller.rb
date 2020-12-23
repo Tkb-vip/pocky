@@ -71,4 +71,5 @@ class WeathersController < ApplicationController
     def weather_params
       params.require(:weather).permit(:temp_max, :temp_min, :temp_feel, :weather_id, :rainfall, :date, :aquired_at)
     end
+    
 end
