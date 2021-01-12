@@ -2,57 +2,57 @@ module ClubsHelper
     def club_name_illust(val)
         case val
         when 1
-            return "/club_img/baseball.jpg"
+            return "/club_img/baseball.png"
         when 2
-            return "/club_img/volleyball.jpg"
+            return "/club_img/volleyball.png"
         when 3
-            return "/club_img/basketball.jpg"
+            return "/club_img/basketball.png"
         when 4
-            return "/club_img/basketball.jpg"
+            return "/club_img/basketball.png"
         when 5
-            return "/club_img/tabletennis.jpg"
+            return "/club_img/tabletennis.png"
         when 6
-            return "/club_img/tennis.jpg"
+            return "/club_img/tennis.png"
         when 7
-            return "/club_img/rikuzyou.jpg"
+            return "/club_img/rikuzyo.png"
         when 8
-            return "/club_img/badominton.jpg"
+            return "/club_img/badominton.png"
         when 9
-            return "/club_img/softball.jpg"
+            return "/club_img/softball.png"
         when 10
-            return "/club_img/kendo.jpg"
+            return "/club_img/kendo.png"
         when 11
-            return "/club_img/kyudo.jpg"
+            return "/club_img/kyudo.png"
         when 12
-            return "/club_img/soccer.jpg"
+            return "/club_img/soccer.png"
         when 13
-            return "/club_img/bunngei.jpg"
+            return "/club_img/bungei.png"
         when 14
-            return "/club_img/bizyutu.jpg"
+            return "/club_img/bizyutu.png"
         when 15
-            return "/club_img/syashinn.jpg"
+            return "/club_img/syashinn.png"
         when 16
-            return "/club_img/sado.jpg"
+            return "/club_img/sado.png"
         when 17
-            return "/club_img/kadou.jpg"
+            return "/club_img/kado.png"
         when 18
-            return "/club_img/suibu.jpg"
+            return "/club_img/suibu.png"
         when 19
-            return "/club_img/keizaityousa.jpg"
+            return "/club_img/keizaichousa.png"
         when 20
-            return "/club_img/syuzann.jpg"
+            return "/club_img/shuzan.png"
         when 21
-            return "/club_img/wa-puro.jpg"
+            return "/club_img/wa-puro.png"
         when 22
-            return "/club_img/housou.jpg"
+            return "/club_img/housou.png"
         when 23
-            return "/club_img/boki.jpg"
+            return "/club_img/boki.png"
         when 24
-            return "/club_img/gassyou.jpg"
+            return "/club_img/gassyou.png"
         when 25
-            return "/club_img/tyouridoukoukai.jpg"
+            return "/club_img/chouri.png"
         when 26
-            return "/club_img/dance.jpg"
+            return "/club_img/dance.png"
         else 
             return "予期せぬ天候"
         end
