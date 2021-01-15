@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <h1><%= club_name(@club_name.to_i) %></h1>
-<img src="<%= club_name_illust(@club_name.to_i) %>">
+<span class ="illust"><img src="<%= club_name_illust(@club_name.to_i) %>"></span>
 <div class="row" >
  <%= link_to(clubs_path(club_name: @club_name,activitiesdate: @yesterday)) do %>
   <div class="col-md-4">
