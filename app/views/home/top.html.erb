@@ -47,8 +47,8 @@
          <br>
          <%= weather_string(weather.weather_id) %>
          <br>
-         <div class="max"><%= weather.temp_max %></div>
-         <div class="min"><%= weather.temp_min %></div>
+         <div class="max"><%= weather.temp_max.round %>°</div>
+         <div class="min"><%= weather.temp_min.round %>°</div>
          </div>
        <% end %>
      </div>

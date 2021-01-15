@@ -32,25 +32,25 @@
        <% if i == 0 %>
        <th scope="row" nowrap><mark>最高気温</mark></th>
        <% end %>
-       <td><div class="max"><%= weather.temp_max %></div></td>
+       <td><div class="max"><%= weather.temp_max.round %>°</div></td>
      </tr>
      <tr>
        <% if i == 0 %>
        <th scope="row"><mark>最低気温</mark></th>
        <% end %>
-       <td><div class="min"><%= weather.temp_min %></div></td>
+       <td><div class="min"><%= weather.temp_min.round %>°</div></td>
      </tr>
      <tr>
        <% if i == 0 %>
        <th scope="row"><mark>体感気温</mark></th>
        <% end %>
-       <td><%= weather.temp_feel %></td>
+       <td><%= weather.temp_feel.round %>°</td>
      </tr>  
      <tr>
        <% if i == 0 %>
        <th scope="row"><mark>降水量</mark></th>
        <% end %>
-       <td><%= weather.rainfall %></td>
+       <td><%= weather.rainfall %>mm</td>
      </tr>
     </tbody>
     </table>
