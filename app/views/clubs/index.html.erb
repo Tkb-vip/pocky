@@ -22,13 +22,13 @@
 <% else %>
 <table border = 1 align="center">
 <tr>
-<td>
-<p>
+<td width=300px>
+<p>活動内容：
 <%= @club_find.activities %>
 </P>
 </td>
 <td>
-<p>
+<p>活動場所：
 <%= @club_find.place.name %>
 <br>
 <% if @club_find.place.place_image.present? %>
@@ -66,12 +66,22 @@
 </td>
 <td>
 <p>
-先生チェック <%= @club_find.tcheck %>
+先生チェック  
+<% if  @club_find.tcheck %>
+<%= image_tag "/check.png", size: "60x40" %>
+<% else %>
+<%= image_tag "/check_s.png", size: "70x50" %>
+<% end %>
 <br>
 <%= @club_find.tcheck_updated_at.strftime("%Y-%m-%d %H:%M:%S") %>
 </p>
 <p>
-生徒チェック <%= @club_find.scheck %>
+生徒チェック 
+<% if  @club_find.scheck %>
+<%= image_tag "/check.png", size: "60x40" %>
+<% else %>
+<%= image_tag "/check_s.png", size: "70x50" %>
+<% end %>
 <br>
 <%= @club_find.scheck_updated_at.strftime("%Y-%m-%d %H:%M:%S") %>
 </p>

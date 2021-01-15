@@ -6,44 +6,44 @@
 </p>
 
 <p>
-  <strong>Activities:</strong>
+  <strong>活動日:</strong>
   <%= @club.activitiesdate %>
 </p>
 
 <p>
-  <strong>Activities:</strong>
+  <strong>活動内容:</strong>
   <%= @club.activities %>
 </p>
 
 <p>
-  <strong>Tcheck:</strong>
+  <strong>先生チェック:</strong>
   <%= @club.tcheck %>
 </p>
 
 <p>
-  <strong>scheck:</strong>
+  <strong>生徒チェック:</strong>
   <%= @club.scheck %>
 </p>
 
 <p>
-  <strong>Tcheck updated at:</strong>
+  <strong>先生最終更新時間:</strong>
   <%= @club.tcheck_updated_at %>
 </p>
 
 <p>
-  <strong>Scheck updated at:</strong>
+  <strong>生徒最終チェック時間:</strong>
   <%= @club.scheck_updated_at %>
 </p>
 
 <p>
-  <strong>Place:</strong>
+  <strong>活動場所id:</strong>
   <%= @club.place_id %>
 </p>
 
 <p>
-  <strong>Club name:</strong>
+  <strong>部活id:</strong>
   <%= @club.club_name_id %>
 </p>
 
-<%= link_to 'edit', edit_club_path(@club) %> |
-<%= link_to 'Back', clubs_path %>
+<%= link_to '編集', edit_club_path(@club) %> |
+<%= link_to '戻る', clubs_path %>
