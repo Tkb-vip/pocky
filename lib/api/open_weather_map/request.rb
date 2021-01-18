@@ -18,7 +18,11 @@ module Api
             end
 
             def self.attributes_for(attrs)
-                rainfall = attrs['rain']['3h'] if attrs['rain']
+                if attrs['rain']
+                  rainfall = attrs['rain']['3h']
+                else
+                  rainfall = 0
+                end
                 date = attrs['dt_txt'].in_time_zone('UTC').in_time_zone
 
                 {

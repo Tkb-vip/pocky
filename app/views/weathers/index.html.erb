@@ -50,7 +50,11 @@
        <% if i == 0 %>
        <th scope="row"><mark>降水量</mark></th>
        <% end %>
-       <td><%= weather.rainfall %>mm</td>
+       <% if weather.rainfall == 0.0 %>
+       <td><%= weather.rainfall.round() %>mm</td>
+       <% else %>
+       <td><%= weather.rainfall.round(1) %>mm</td>
+       <% end %>
      </tr>
     </tbody>
     </table>
