@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 ClubName.delete_all
-ClubName.connection.execute("delete from sqlite_sequence where name='club_names'")
+# ClubName.connection.execute("delete from sqlite_sequence where name='club_names'")
 ClubName.create(name: "野球部", sort: 1)
 ClubName.create(name: "バレーボール部", sort: 2)
 ClubName.create(name: "男子バスケットボール部", sort: 3)
@@ -36,7 +36,7 @@ ClubName.create(name: "調理同好会", sort: 25)
 ClubName.create(name: "ダンス同好会", sort: 26)
 
 Place.delete_all
-Place.connection.execute("delete from sqlite_sequence where name='places'")
+# Place.connection.execute("delete from sqlite_sequence where name='places'")
 Place.create(name: "体育館下 入り口前",place_image: "WIN_20201012_11_39_22_Pro.jpg", sort: 0)
 Place.create(name: "体育館下 卓球場前南側",place_image: "WIN_20201012_11_40_23_Pro.jpg", sort: 0)
 Place.create(name: "体育館下 剣道場前",place_image: "WIN_20201012_11_40_17_Pro.jpg", sort: 0)
@@ -93,7 +93,7 @@ Place.create(name: "地歴公民教室",place_image:"WIN_20201009_15_14_16_Pro.j
 
 
 User.delete_all
-User.connection.execute("delete from sqlite_sequence where name='users'")
+# User.connection.execute("delete from sqlite_sequence where name='users'")
 User.create(username: "baseball",password:"baseball",club_name_id:1, teacher:false,admin:false )
 User.create(username: "baseballteacher",password:"baseballteacher",club_name_id:1, teacher:true,admin:false )
 User.create(username: "volleyball",password:"volleyball",club_name_id:2, teacher:false,admin:false )
