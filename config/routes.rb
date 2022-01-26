@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
   # get 'home/top'
   get '/',  to: 'home#top'
+  root 'home#top'
 
   resources :comments
   resources :places
